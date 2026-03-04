@@ -1,5 +1,8 @@
 async function getWeather(city) {
-    cityName.innerHTML=city
+    const pageTitleEl = document.getElementById('pageTitle');
+    if (pageTitleEl) {
+        pageTitleEl.innerHTML = 'Weather of <span class="city-name text-uppercase">' + escapeHtml(city) + '</span>';
+    }
     const url = `https://weatherapi-com.p.rapidapi.com/current.json?q=${encodeURIComponent(city)}`;
     const options = {
         method: 'GET',
@@ -50,6 +53,12 @@ async function getWeather(city) {
     } catch (error) {
         console.error('Failed to fetch weather data:', error);
     }
+}
+
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
 }
 
 document.getElementById('submit').addEventListener("click", (e) => {

@@ -2,67 +2,95 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css"
-        integrity="sha384-dpuaG1suU0eT09tx5plTaGMLBsfDLzUCCUXOY2j/LSvXYuG6Bqs43ALlhIqAJVRb" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guide – Know Weather</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="bg" style="background-image: url('winter.jpg'); background-repeat: no-repeat; background-size: cover;padding-top: 2rem;margin-bottom: 2rem;"</div>
-    <div class="card mx-auto my-4 " style="width: 25rem;">
-        <img src="cartoon-sun.jpg" class="card-img-top" alt="...">
-        <div class="card-body text-center mx-auto">
-            <span style="@import
-      url('https://fonts.googleapis.com/css2?family=Moderustic:wght@300..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');font-family: 'Times New Roman', Times, serif;font-size: 0.75rem;" id="element" class="text-uppercase text-center fw-bold text-center"></span>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-header text-center">
-            RRK
-        </div>
+  <div class="guide-hero">
+    <div class="container py-4">
+      <div class="card guide-content-card border-0">
+        <img src="cartoon-sun.jpg" class="card-img-top" alt="Guide" style="height: 12rem; object-fit: cover;">
         <div class="card-body text-center">
-            <h5 class="card-title">Know Weather</h5>
-            <p class="card-text">To know your city weather click "GO BACK" button.</p>
-            <a href="index.html" class="btn btn-primary">GO BACK</a>
+          <span id="element" class="text-uppercase fw-bold small text-body"></span>
         </div>
+      </div>
     </div>
+  </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+ 
+    
 
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <footer class="footer-section">
 
-    <script>
-        var strings = [
-            'Welcome...!', 
-            'This Guidance is about how to know your city weather.',
-            'In the main page there will be an input button on the top most right(left of search icon)', 
-            'Click that button and enter the city name of which you want to know the weather.',
-            'Then click the search button.',
-            'Now you will get the weather of your city.',
-            'You can also get the audio sound of weather information by clicking the "read weather information" button.',
-            'Thank you...!'
-        ];
-
-        var typed = new Typed('#element', {
-            strings: strings,
-            typeSpeed: 50,
-            onStringTyped: function (arrayPos) {
-                // Speak the text once it's typed
-                speakText(strings[arrayPos]);
-            }
-        });
-
-        // Function to speak the strings
-        function speakText(text) {
-            const speech = new SpeechSynthesisUtterance(text);
-            window.speechSynthesis.speak(speech);
-        }
-    </script>
+    <div class="container">
+    
+    <div class="card guide-card border-0">
+    
+      <div class="card-header text-center d-flex align-items-center justify-content-center gap-2">
+        <i data-lucide="user" class="lucide"></i>
+        RRK
+      </div>
+    
+    <div class="card-body text-center">
+    
+      <h5 class="card-title d-flex align-items-center justify-content-center gap-2">
+        <i data-lucide="cloud-sun" class="lucide"></i>
+        Know Weather
+      </h5>
+    
+    <p class="card-text text-muted">
+      To know your city weather click "GO BACK" button.
+    </p>
+    
+    <a href="index.html" class="btn btn-primary">
+    
+    Go Back
+    
+    </a>
+    
+    </div>
+    </div>
+    
+    </div>
+    
+    </footer>
+  
+    
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script>
+    lucide.createIcons();
+    var strings = [
+      'Welcome...!',
+      'This guide explains how to check your city weather.',
+      'On the main page there is an input at the top right (left of the search icon).',
+      'Click it and enter the city name you want.',
+      'Then click the search button.',
+      'You will see the weather for your city.',
+      'You can hear the weather by clicking "Read Weather Information".',
+      'Thank you...!'
+    ];
+    var typed = new Typed('#element', {
+      strings: strings,
+      typeSpeed: 50,
+      onStringTyped: function (arrayPos) {
+        speakText(strings[arrayPos]);
+      }
+    });
+    function speakText(text) {
+      const speech = new SpeechSynthesisUtterance(text);
+      window.speechSynthesis.speak(speech);
+    }
+  </script>
 </body>
 
 </html>
